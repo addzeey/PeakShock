@@ -17,6 +17,41 @@ PeakShock is a mod for PEAK that connects supported shock devices (like PiShock 
    - Enable or disable specific damage types as you like.
 4. Play PEAK and enjoy the extra challenge!
 
+## Configuration File Explained
+When you first run the game with PeakShock installed, a config file named `addzeey.PeakShock.cfg` will be generated in your config folder. This file controls how the mod interacts with your shock device and lets you customize your experience.
+
+**All available config options:**
+
+- **Shock Platform**
+  - `Provider`: Choose which device to use (`PiShock` or `OpenShock`).
+
+- **PiShock Settings**
+  - `UserName`: Your PiShock username.
+  - `APIKey`: Your PiShock API Key.
+  - `ShareCode`: Your PiShock ShareCode.
+
+- **OpenShock Settings**
+  - `ApiUrl`: OpenShock API URL (default: `https://api.openshock.app`).
+  - `DeviceId`: Your OpenShock Device ID.
+  - `ApiKey`: Your OpenShock API Key.
+
+- **Shock Intensity and Timing**
+  - `MinShock`: Minimum shock intensity (1-100).
+  - `MaxShock`: Maximum shock intensity (1-100).
+  - `DeathShock`: Shock intensity on death (1-100).
+  - `DeathDuration`: Shock duration on death (seconds).
+  - `ShockCooldownSeconds`: Minimum seconds between shocks (prevents shock spam).
+
+- **Shock Triggers**
+  - `EnableInjuryShock`: Enable shock for Injury damage.
+  - `EnablePoisonShock`: Enable shock for Poison damage.
+  - `EnableColdShock`: Enable shock for Cold damage.
+  - `EnableHotShock`: Enable shock for Hot/Fire damage.
+
+You can edit this file manually with a text editor, or use your mod manager's config editor if available. Always save your changes before restarting the game.
+
+If you have questions about a specific setting, check the comments in the config file or ask in the mod's support channels.
+
 ## Safety Notice
 Use shock devices responsibly. Start with low settings and stop if you feel uncomfortable or take breaks.
 
