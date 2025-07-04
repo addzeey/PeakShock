@@ -21,7 +21,7 @@ namespace PeakShock
     [BepInAutoPlugin]
     public partial class Plugin : BaseUnityPlugin
     {
-        public const string PluginVersion = "0.1.4";
+        public const string PluginVersion = "0.1.5";
         internal static ManualLogSource Log { get; private set; } = null!;
         internal static ConfigFile CFG { get; private set; } = null!;
         internal static PiShockController PiShockController { get; private set; } = null!;
@@ -130,7 +130,9 @@ namespace PeakShock
             [HarmonyPostfix]
             public static void Postfix(CharacterAfflictions __instance, CharacterAfflictions.STATUSTYPE statusType, float amount, bool fromRPC)
             {
-                if (!__instance.character.IsLocal) return;
+                // Only trigger for the true local player (fix for PEAK Unlimited ghost/duplicate player names)
+                if (!__instance.character.IsLocal || __instance.character != Character.localCharacter)
+                    return;
                 if (amount <= 0f) return;
                 // Ignore all status effect shocks if the player is dead or passed out
                 if (__instance.character.data.dead || __instance.character.data.fullyPassedOut || __instance.character.data.passedOut)

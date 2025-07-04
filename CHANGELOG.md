@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.5] - 2025-07-04
+### Added
+- Fixed ghost shocks when lobby is using a mod that ups player limit and other players can share the players name.
+
 ## [0.1.4] - 2025-07-04
 ### Added
 - Added mod source and github repo link to package
