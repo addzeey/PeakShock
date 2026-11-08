@@ -1,0 +1,17 @@
+name: Notify Discord about new issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord notification
+        uses: Tungdil83/discord-issue-notify@v1.1.0
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          mention_users: "175431856106242049"
